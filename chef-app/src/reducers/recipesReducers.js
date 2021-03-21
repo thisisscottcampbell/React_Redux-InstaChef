@@ -1,6 +1,6 @@
-import { SET_RECIPES } from '../actions/types';
+import { SET_RECIPES, FAVE_RECIPE } from '../actions/types';
 
-const recipesReducer = (state = [], action) => {
+export const recipesReducer = (state = [], action) => {
 	switch (action.type) {
 		case SET_RECIPES:
 			return action.payload;
@@ -9,4 +9,11 @@ const recipesReducer = (state = [], action) => {
 	}
 };
 
-export default recipesReducer;
+export const favesReducer = (state = [], action) => {
+	switch (action.type) {
+		case FAVE_RECIPE:
+			return [...state, action.payload];
+		default:
+			return state;
+	}
+};

@@ -1,8 +1,15 @@
-import { SET_RECIPES } from './types';
+import { SET_RECIPES, FAVE_RECIPE } from './types';
 
-export const setRecipes = (items) => {
+export const setRecipes = (recipes) => {
 	return {
 		type: SET_RECIPES,
-		payload: items,
+		payload: recipes,
+	};
+};
+
+export const faveRecipe = (recipe) => {
+	return {
+		type: FAVE_RECIPE,
+		payload: recipe,
 	};
 };

@@ -15,7 +15,6 @@ import {
 const SearchRecipes = ({ setRecipes }) => {
 	const [ingredients, setIngredients, resetIngredients] = useInput('');
 	const [dish, setDish, resetDish] = useInput('');
-	//const [isFetching, setIsFetching] = useState(false);
 
 	const genRecipes = async () => {
 		const res = await axios.get(
@@ -29,13 +28,6 @@ const SearchRecipes = ({ setRecipes }) => {
 		resetDish();
 		resetIngredients();
 	};
-	// useEffect(() => {
-	//   if (!isFetching) return;
-
-	//   genRecipes()
-
-	//   setIsFetching(false)
-	// }, [isFetching])
 
 	return (
 		<Form inline>
