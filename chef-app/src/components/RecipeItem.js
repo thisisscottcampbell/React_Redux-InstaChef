@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { faveRecipe } from '../actions';
 
-const RecipeItem = ({ recipe, faveRecipe }) => {
+const RecipeItem = ({ recipe, faveRecipe, star }) => {
 	const [isFave, setFave] = useState(false);
 	const handleClick = () => {
 		if (isFave) {
@@ -15,15 +15,17 @@ const RecipeItem = ({ recipe, faveRecipe }) => {
 	const updateFave = () => setFave(false);
 	return (
 		<div className="recipe-item">
-			{isFave ? (
-				<div className="star" onClick={handleClick}>
-					&#9733;
-				</div>
-			) : (
-				<div className="star" onClick={handleClick}>
-					&#9734;
-				</div>
-			)}
+			{star ? (
+				isFave ? (
+					<div className="star" onClick={handleClick}>
+						&#9733;
+					</div>
+				) : (
+					<div className="star" onClick={handleClick}>
+						&#9734;
+					</div>
+				)
+			) : null}
 			<div className="recipe-text">
 				<a href={recipe.href}>
 					<h4>{recipe.title}</h4>

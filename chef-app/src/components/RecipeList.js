@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 const RecipeList = ({ recipes }) => {
 	return (
 		<div>
+			<h4>Search Results</h4>
 			{recipes.map((recipe, i) => (
-				<RecipeItem recipe={recipe} key={i} />
+				<RecipeItem recipe={recipe} key={i} star={true} />
 			))}
 		</div>
 	);
